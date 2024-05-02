@@ -1,0 +1,53 @@
+// Create a class named 'C' with the following specifications:
+//instance variable to hold students exam score
+//an input function to read integers and save them
+//calculate total score function that receives the sum of the individual scores
+
+
+#include<bits/stdc++.h>
+#define pb push_back
+using namespace std;
+
+class C
+{
+private:
+    vector<int>examScores;
+
+public:
+    void inputScore()
+    {
+        int score;
+        cout<<"Enter the students marks: (-1 to stop taking the input)"<<"\n";
+        int flag = 0;
+        while(flag==0)
+        {
+            cin>>score;
+            if(score==-1)
+            {
+                flag = 1;
+                break;
+            }
+            else
+            {
+                examScores.pb(score);
+            }
+        }
+    }
+
+    int calculateTotalScore()
+    {
+        int total_score = 0;
+        for(auto it: examScores)
+        {
+            total_score+=it;
+        }
+        return total_score;
+    }
+};
+int main()
+{
+    C ss;
+    ss.inputScore();
+    cout<<"The total score of the student is: "<<ss.calculateTotalScore()<<"\n";
+}
+
