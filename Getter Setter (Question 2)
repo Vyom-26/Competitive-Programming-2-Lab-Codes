@@ -1,0 +1,86 @@
+
+/*
+Create a class named student representing student details as mentioned & store the data:
+create a getter and setter functions for each element i.e the class should have atleast the following input functions:
+1) get_age and set_age
+2) get_first_name and set_first_name
+3) get_last_name and set_last_name
+4) get_standard and set_standard
+
+Create another method to_string() which returns the string consisiting of the above elements separated by a comma
+*/
+
+#include<bits/stdc++.h>
+#define pb push_back
+using namespace std;
+
+class Student
+{
+private:
+    int age;
+    string first_name;
+    string last_name;
+    int standard;
+
+public:
+    int get_age()
+    {
+        return age;
+    }
+
+    void set_age(int new_age)
+    {
+        age = new_age;
+    }
+
+    string get_first_name()
+    {
+        return first_name;
+    }
+
+    void set_first_name(string new_first_name)
+    {
+        first_name = new_first_name;
+    }
+
+    string get_last_name()
+    {
+        return last_name;
+    }
+
+    void set_last_name(string new_last_name)
+    {
+        last_name = new_last_name;
+    }
+
+    int get_standard()
+    {
+        return standard;
+    }
+
+    void set_standard(int new_standard)
+    {
+        standard = new_standard;
+    }
+
+    string to_string()
+    {
+        return std::to_string(age) + ", " + first_name + ", " + last_name + ", " + std::to_string(standard);
+    }
+};
+
+int main()
+{
+    Student student;
+
+    student.set_age(18);
+    student.set_first_name("Vyom");
+    student.set_last_name("Goyal");
+    student.set_standard(12);
+    cout << "Student Details: " << student.to_string() << std::endl;
+
+    return 0;
+
+}
+
+
