@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    vector<int> arr(n);
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int rotateBy;
+    cout << "Enter how many times you want to rotate left: ";
+    cin >> rotateBy;
+
+    vector<int> ans(n);
+
+
+    for (int i = 0; i < n; i++) {
+        ans[i] = arr[(i + rotateBy) % n];
+    }
+
+    cout << "Rotated array: ";
+    for (int num : ans) {
+        cout << num << " ";
+    }
+    cout <<endl;
+
+    return 0;
+}
